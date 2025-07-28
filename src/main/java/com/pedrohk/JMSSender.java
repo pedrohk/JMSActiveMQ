@@ -1,14 +1,15 @@
 package com.pedrohk;
 
 
+
+import jakarta.jms.Connection;
+import jakarta.jms.JMSException;
+import jakarta.jms.MessageProducer;
+import jakarta.jms.Queue;
+import jakarta.jms.Session;
+import jakarta.jms.TextMessage;
 import org.apache.activemq.ActiveMQConnectionFactory;
 
-import javax.jms.Connection;
-import javax.jms.JMSException;
-import javax.jms.MessageProducer;
-import javax.jms.Queue;
-import javax.jms.Session;
-import javax.jms.TextMessage;
 
 public class JMSSender {
     public static void main(String[] args) {
@@ -29,7 +30,7 @@ public class JMSSender {
             MessageProducer producer = session.createProducer(queue);
 
 
-            TextMessage message = session.createTextMessage("Olá, JMS!");
+            TextMessage message = session.createTextMessage("Hello :), JMS!");
 
 
             producer.send(message);
