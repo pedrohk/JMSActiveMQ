@@ -24,7 +24,7 @@ public class JMSSender {
             Session session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
 
 
-            Queue queue = session.createQueue("minha.fila");
+            Queue queue = session.createQueue("my.queue");
 
 
             MessageProducer producer = session.createProducer(queue);
